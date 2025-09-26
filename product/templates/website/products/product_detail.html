@@ -1,0 +1,11 @@
+{% extends "website/common/base.html" %}
+{% block main_content %}
+<div class="card shadow-sm mb-4">
+  <div class="card-body">
+    <h2 class="card-title">{{ product.name }}</h2>
+    <p class="card-text">{{ product.description }}</p>
+    <p class="card-text fw-bold">Price: ${{ product.price }}</p>
+    <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary">Add to Cart</a>
+  </div>
+</div>
+{% endblock %}
