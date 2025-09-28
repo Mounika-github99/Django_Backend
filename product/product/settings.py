@@ -17,7 +17,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'django-insecure-default-secret-key'
 DEBUG = os.getenv('DJANGO_DEBUG', 'True') == 'True'
 
 # Hosts
-ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', 'localhost 127.0.0.1').split()
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 INSTALLED_APPS = [
@@ -81,12 +81,12 @@ if os.getenv('DJANGO_USE_SQLITE', 'True') == 'True':
 else:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': os.getenv('MYSQL_DB', 'product'),
-            'USER': os.getenv('MYSQL_USER', 'root'),
-            'PASSWORD': os.getenv('MYSQL_PASSWORD', ''),
-            'HOST': os.getenv('MYSQL_HOST', 'localhost'),
-            'PORT': os.getenv('MYSQL_PORT', '3306'),
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'product',
+            # 'USER': os.getenv('MYSQL_USER', 'root'),
+            # 'PASSWORD': os.getenv('MYSQL_PASSWORD', ''),
+            # 'HOST': os.getenv('MYSQL_HOST', 'localhost'),
+            # 'PORT': os.getenv('MYSQL_PORT', '3306'),
         }
     }
 
